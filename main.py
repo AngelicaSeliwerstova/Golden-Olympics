@@ -1,15 +1,46 @@
+import random
+from cats import (
+    Lelik,
+    Misa,
+    Busya,
+    Musya,
+    Loaf,
+    Lelik_Lelikovich,
+    Kimrik,
+    Minuet,
+)
+from battle import fight,victory
+team_1=[]
+team_2=[]
+pull=[
+    Lelik(),
+      Misa(),
+      Busya(),
+      Musya(),
+      Loaf(),
+      Lelik_Lelikovich(),
+      Kimrik(),
+      Minuet()
+]
+for kit in pull:
+    while len(team_1)!=4:
+        random_kit=random.choice(pull)
+        team_1.append(random_kit)
+        pull.remove(random_kit)
+    while len(team_2) != 4:
+        random_kit = random.choice(pull)
+        team_2.append(random_kit)
+        pull.remove(random_kit)
 
-from typing import Union
-class Calculator:
-    def divide(self, x:Union[int,float],y: Union[int,float])->int|float:
-        if not isinstance(x,(int,float)) or not isinstance(y,(int,float)):
-            raise TypeError("Both arguments should be numeric")
-        if y==0:
-            raise ZeroDivisionError("Cannot divide by zero")
-        return x/y
-    def add(self,x:Union[int,float],y:Union[int,float])->int|float:
-        if not isinstance(x,(int,float)):
-            raise TypeError("Both arguments should be numeric")
-        return x+y
-if __name__  == "__main__":
-    calculator=Calculator()
+fight(team_1,team_2)
+victory(team_1,team_2)
+
+
+
+
+
+
+
+
+
+
