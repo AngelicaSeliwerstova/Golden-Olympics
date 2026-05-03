@@ -12,6 +12,8 @@ from cats import (
 from battle import fight,victory
 team_1=[]
 team_2=[]
+runned_team_1=[]
+runned_team_2=[]
 pull=[
     Lelik(),
       Misa(),
@@ -32,7 +34,7 @@ for kit in pull:
         team_2.append(random_kit)
         pull.remove(random_kit)
 
-fight(team_1,team_2)
+fight(team_1,team_2,runned_team_1,runned_team_2)
 victory(team_1,team_2)
 
 
